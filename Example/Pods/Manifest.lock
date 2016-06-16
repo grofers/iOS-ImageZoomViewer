@@ -1,0 +1,16 @@
+PODS:
+  - ImageZoomViewer (0.1.0)
+
+DEPENDENCIES:
+  - ImageZoomViewer (from `../`)
+
+EXTERNAL SOURCES:
+  ImageZoomViewer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ImageZoomViewer: d784d43cf71eb0569f0572de56a94b6bb36222b1
+
+PODFILE CHECKSUM: ed8602e28882cbaa4be5941f4f79f96b225ef391
+
+COCOAPODS: 1.0.1
