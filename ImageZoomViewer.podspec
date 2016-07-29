@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImageZoomViewer'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'ImageZoomViewer allow to view and zoom multiple images.'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ ImageZoomViewer is xib based code snippet that allows image viewing and zooming 
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Anubhav Mathur' => 'anubhav.mathur@grofers.com' }
-  s.source           = { :git => 'https://github.com/grofers/iOS-ImageZoomViewer.git',:branch => 'master' }
+  s.source           = { :git => 'https://github.com/grofers/iOS-ImageZoomViewer.git',:tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '7.0'
