@@ -8,4 +8,6 @@ target 'ImageZoomViewer_Example' do
 
     
   end
+pod 'SDWebImage'
 end
+

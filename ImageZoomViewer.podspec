@@ -31,6 +31,7 @@ ImageZoomViewer is xib based code snippet that allows image viewing and zooming 
   s.ios.deployment_target = '7.0'
 
   s.source_files = 'ImageZoomViewer/Classes/**/*'
+  s.requires_arc          = true
 
   s.resources = 'ImageZoomViewer/Views/**/*.xib'
 # s.resource_bundles = {
