@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifier" id="gTV-IL-0wX" customClass="IZVMainCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXn-Na-Wqf">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Li-zs-Idn">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5Li-zs-Idn" secondAttribute="bottom" id="FIt-bd-AdD"/>
+                            <constraint firstItem="5Li-zs-Idn" firstAttribute="leading" secondItem="IXn-Na-Wqf" secondAttribute="leading" id="KEG-fd-zd4"/>
+                            <constraint firstAttribute="trailing" secondItem="5Li-zs-Idn" secondAttribute="trailing" id="ToD-Ld-2z6"/>
+                            <constraint firstItem="5Li-zs-Idn" firstAttribute="centerX" secondItem="IXn-Na-Wqf" secondAttribute="centerX" id="YcH-R5-KkB"/>
+                            <constraint firstItem="5Li-zs-Idn" firstAttribute="centerY" secondItem="IXn-Na-Wqf" secondAttribute="centerY" id="ZnY-Fh-yrw"/>
+                            <constraint firstItem="5Li-zs-Idn" firstAttribute="top" secondItem="IXn-Na-Wqf" secondAttribute="top" id="d8p-5G-3DK"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="hhg-c2-9sB"/>
+                        </connections>
+                    </scrollView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IXn-Na-Wqf" secondAttribute="trailing" id="0Gg-Q1-eRi"/>
+                <constraint firstItem="IXn-Na-Wqf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fLq-Su-TgS"/>
+                <constraint firstAttribute="bottom" secondItem="IXn-Na-Wqf" secondAttribute="bottom" id="nzY-Ui-DXZ"/>
+                <constraint firstItem="IXn-Na-Wqf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tIc-Iy-Cor"/>
+            </constraints>
+            <size key="customSize" width="261" height="229"/>
+            <connections>
+                <outlet property="imgview" destination="5Li-zs-Idn" id="v47-JH-kcq"/>
+                <outlet property="scrollView" destination="IXn-Na-Wqf" id="Q7e-El-Edk"/>
+            </connections>
+            <point key="canvasLocation" x="88.5" y="252.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
