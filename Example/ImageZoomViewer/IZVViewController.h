@@ -7,7 +7,10 @@
 //
 
 @import UIKit;
+#import "ImageZoomViewer.h"
 
-@interface IZVViewController : UIViewController
+@interface IZVViewController : UIViewController<ImageZoomViewerDelegate>
+
+-(IBAction)showGallery:(id)sender;
 
 @end

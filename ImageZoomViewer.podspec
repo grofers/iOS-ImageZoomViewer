@@ -33,7 +33,7 @@ ImageZoomViewer is xib based code snippet that allows image viewing and zooming 
   s.source_files = 'ImageZoomViewer/Classes/**/*'
   s.requires_arc          = true
 
-  s.resources = 'ImageZoomViewer/Views/**/*.xib'
+  s.resources = 'ImageZoomViewer/Classes/**/*.xib'
 # s.resource_bundles = {
 #  'ImageZoomViewer' => ['ImageZoomViewer/Assets/*.png']
 #  }
