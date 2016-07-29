@@ -37,16 +37,15 @@ static NSString * subCollectionCellID = @"subCellIdentifier";
 
 - (void)awakeFromNib{
 
-    [mainCollection registerNib:[UINib nibWithNibName:@"IZVMainCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:mainCollectionCellID];
-    [subCollection registerNib:[UINib nibWithNibName:@"IZVSubCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:subCollectionCellID];
+    [mainCollection registerNib:[UINib nibWithNibName:@"IZVMainCollectionViewCell" bundle:[NSBundle bundleForClass:[IZVMainCollectionViewCell class]]] forCellWithReuseIdentifier:mainCollectionCellID];
+    [subCollection registerNib:[UINib nibWithNibName:@"IZVSubCollectionViewCell" bundle:[NSBundle bundleForClass:[IZVSubCollectionViewCell class]]] forCellWithReuseIdentifier:subCollectionCellID];
     
 }
 
 
 - (id)initWithBottomCollectionBorderColor:(UIColor *)bottomBorderColor{
 
-
-    self = [[[NSBundle mainBundle] loadNibNamed:@"ImageZoomViewer" owner:self options:nil] firstObject];
+    self = [[[NSBundle bundleForClass:self.class]loadNibNamed:@"ImageZoomViewer" owner:self options:nil] firstObject];
     
     if (self)
     {

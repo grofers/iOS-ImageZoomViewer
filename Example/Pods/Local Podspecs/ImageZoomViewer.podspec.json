@@ -20,5 +20,5 @@
   },
   "source_files": "ImageZoomViewer/Classes/**/*",
   "requires_arc": true,
-  "resources": "ImageZoomViewer/Views/**/*.xib"
+  "resources": "ImageZoomViewer/Classes/**/*.xib"
 }
