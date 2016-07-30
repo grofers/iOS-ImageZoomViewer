@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ImageZoomViewer'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'ImageZoomViewer allow to view and zoom multiple images.'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,9 @@ ImageZoomViewer is xib based code snippet that allows image viewing and zooming 
 
   s.ios.deployment_target = '7.0'
 
-  s.source_files = 'ImageZoomViewer/Classes/**/*'
+  s.source_files = 'ImageZoomViewer/Classes/**/*.{h,m}'
   s.requires_arc          = true
+
 
 # s.resource_bundles = {
 #  'ImageZoomViewer' => ['ImageZoomViewer/Assets/*.png']
