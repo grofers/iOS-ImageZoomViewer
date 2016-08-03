@@ -81,8 +81,9 @@ static NSString * subCollectionCellID = @"subCellIdentifier";
     [mainCollection reloadData];
     [subCollection reloadData];
     NSIndexPath *indxPath = [NSIndexPath indexPathForRow:selectionIndex inSection:0] ;
-    [mainCollection scrollToItemAtIndexPath:indxPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    [mainCollection setContentOffset:CGPointMake([UIScreen mainScreen].bounds.size.width *selectionIndex, mainCollection.contentOffset.y) animated:YES];
     [subCollection scrollToItemAtIndexPath:indxPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+  
 }
 
 - (void)showWithBounce{
@@ -407,6 +408,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([collectionView isEqual:subCollection]) {
         [mainCollection scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         selectionIndex = indexPath.row;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(imageIndexOnChange:)])
+        {
+            [self.delegate imageIndexOnChange:selectionIndex];
+        }
+        if(animImageview){
+            
+            IZVSubCollectionViewCell * cell = (IZVSubCollectionViewCell *)[mainCollection cellForItemAtIndexPath:indexPath];
+            
+        }
+
         [subCollection reloadData];
         [subCollection scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         
