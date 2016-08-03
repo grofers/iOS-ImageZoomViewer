@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface IZVSubCollectionViewCell : UICollectionViewCell
+@property (nonatomic,weak) IBOutlet UIImageView * imgView;
 
 @end

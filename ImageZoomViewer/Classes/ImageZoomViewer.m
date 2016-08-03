@@ -329,20 +329,13 @@ static NSString * subCollectionCellID = @"subCellIdentifier";
     }
     else{
     
-        UICollectionViewCell *cell = [collectionView
+        IZVSubCollectionViewCell *cell = [collectionView
                                       dequeueReusableCellWithReuseIdentifier:subCollectionCellID
                                       forIndexPath:indexPath];
         
-        for (UIImageView * imgview in cell.subviews) {
-            [imgview removeFromSuperview];
-        }
-        
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,80,80)];
-        imgView.image = nil;
-        imgView.clipsToBounds = YES;
-         imgView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        __weak UIImageView * weakImgVw = imgView;
+        cell.imgView.image = nil;
+        __weak UIImageView * weakImgVw = cell.imgView;
+    
         if (self.delegate != nil && [self.delegate respondsToSelector:@selector(initializeImageviewWithImages:withIndexPath:withCollection:)])  {
             [self.delegate initializeImageviewWithImages:weakImgVw withIndexPath:indexPath withCollection:1];
         }
@@ -359,7 +352,7 @@ static NSString * subCollectionCellID = @"subCellIdentifier";
         else{
             cell.layer.borderWidth = 0.0;
         }
-        [cell addSubview:imgView];
+        
         
         
         
@@ -412,9 +405,11 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         {
             [self.delegate imageIndexOnChange:selectionIndex];
         }
+
         if(animImageview){
             
-            IZVSubCollectionViewCell * cell = (IZVSubCollectionViewCell *)[mainCollection cellForItemAtIndexPath:indexPath];
+            IZVSubCollectionViewCell * cell = (IZVSubCollectionViewCell *)[subCollection cellForItemAtIndexPath:indexPath];
+            animImageview.image = cell.imgView.image;
             
         }
 
