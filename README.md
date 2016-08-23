@@ -1,6 +1,5 @@
 # ImageZoomViewer
 
-[![CI Status](http://img.shields.io/travis/Anubhav Mathur/ImageZoomViewer.svg?style=flat)](https://travis-ci.org/Anubhav Mathur/ImageZoomViewer)
 [![Version](https://img.shields.io/cocoapods/v/ImageZoomViewer.svg?style=flat)](http://cocoapods.org/pods/ImageZoomViewer)
 [![License](https://img.shields.io/cocoapods/l/ImageZoomViewer.svg?style=flat)](http://cocoapods.org/pods/ImageZoomViewer)
 [![Platform](https://img.shields.io/cocoapods/p/ImageZoomViewer.svg?style=flat)](http://cocoapods.org/pods/ImageZoomViewer)
@@ -17,7 +16,7 @@ ImageZoomViewer is available through [CocoaPods](http://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ImageZoomViewer"
+pod 'ImageZoomViewer'
 ```
 
 ## Author
