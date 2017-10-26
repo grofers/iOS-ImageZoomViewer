@@ -10,72 +10,57 @@
 
 @implementation IZVMainCollectionViewCell
 
-//- (id)initWithStyle:(UIcollectionviewcells)style reuseIdentifier:(NSString *)reuseIdentifier
-//{
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-//    if (self) {
-//        // Initialization code
-//    }
-//    return self;
-//}
-
-
-
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
     // Initialization code
-
     self.scrollView.minimumZoomScale=1;
     self.scrollView.maximumZoomScale=3.0;
     self.scrollView.translatesAutoresizingMaskIntoConstraints = YES;
     self.scrollView.delegate=self;
-    self.scrollView.frame = CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 170);
-    
     UITapGestureRecognizer *singleTapGR, *doubleTapGR;
 
-    doubleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                          action:@selector(myDoubleTapHandler)];
+    doubleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myDoubleTapHandler)];
     doubleTapGR.numberOfTapsRequired = 2;
     [singleTapGR requireGestureRecognizerToFail:doubleTapGR];
 
     [self.scrollView addGestureRecognizer:doubleTapGR];
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
-   
-
     self.scrollView.clipsToBounds = YES;
+    
     self.imgview.translatesAutoresizingMaskIntoConstraints = YES;
     self.imgview.contentMode = UIViewContentModeScaleAspectFit;
-    self.imgview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 170);
-  
 }
+
+- (void)updateCellWithViewRect:(CGRect)rect margins:(CGFloat)topBottomMargin
+{
+     self.scrollView.frame = CGRectMake(0, 0,rect.size.width, rect.size.height - topBottomMargin);
+    [self.imgview setFrame:self.scrollView.frame];
+}
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imgview;
 }
--(void)myDoubleTapHandler{
 
-    if(self.zoomed){
-
+-(void)myDoubleTapHandler
+{
+    if(self.zoomed) {
         [UIView animateWithDuration:0.5
                               delay:0
                             options:UIViewAnimationOptionBeginFromCurrentState
                          animations:^{ [self.scrollView setZoomScale:1.0f animated:NO]; }
                          completion:nil];
-        
         self.zoomed = NO;
-    }
-    else{
+    } else {
         [UIView animateWithDuration:0.5
                               delay:0
                             options:UIViewAnimationOptionBeginFromCurrentState
                          animations:^{ [self.scrollView setZoomScale:3.0f animated:NO]; }
                          completion:nil];
-
         self.zoomed = YES;
-    
     }
-
 }
-
 
 @end
