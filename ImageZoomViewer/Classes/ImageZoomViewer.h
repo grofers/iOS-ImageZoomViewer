@@ -7,26 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "IZVMainCollectionViewCell.h"
 
 typedef NS_ENUM(NSUInteger,AnimationType){
-
+    
     AnimationTypeEaseIn,
     AnimationTypePop
-
+    
 };
 
 @class ImageZoomViewer;
 @protocol ImageZoomViewerDelegate <NSObject>
 
 @required
-
 // For every indexpath like collection this will get call apply images on these UIImageview
 -(void)initializeImageviewWithImages:(UIImageView *)imageview withIndexPath:(NSIndexPath *)indexPath withCollection:(int)collectionReference;
 
 @optional
-
 // When image swiped it will return the current image index
 - (void)imageIndexOnChange:(NSInteger)index;
 
@@ -34,25 +31,18 @@ typedef NS_ENUM(NSUInteger,AnimationType){
 
 @interface ImageZoomViewer : UIView<UICollectionViewDataSource,UICollectionViewDelegate,UIScrollViewDelegate>
 
-//
-
-
-
 // Delegate property
-@property(nonatomic,weak)id<ImageZoomViewerDelegate> delegate;
+@property (nonatomic, weak) id<ImageZoomViewerDelegate> delegate;
 
 // Close Button (Modify close button as per view needed by default it will be a close text)
-@property(nonatomic,weak) IBOutlet UIButton * closeBtn;
+@property (nonatomic, weak) IBOutlet UIButton *closeBtn;
 
-/* 
+/*
  initializeMethod
- 
- 
  *******
  bottomBorderColor
  : border color for bottom collection cell for the selected cell;
  *******
- 
  */
 -(id)initWithBottomCollectionBorderColor:(UIColor *)bottomBorderColor;
 
@@ -78,6 +68,14 @@ typedef NS_ENUM(NSUInteger,AnimationType){
  : There are two type of animation AnimationTypePop and AnimationTypeEaseIn (Note. if you are using AnimationTypeEase In send imgView as nil only)
  ********
  */
--(void)showWithPageIndex:(int)pgIndex andImagesCount:(int)totalImagesCount withInitialImageView:(UIImageView *)imgView andAnimType:(AnimationType)animType;
+- (void)showWithPageIndex:(NSInteger)pgIndex andImagesCount:(NSInteger)totalImagesCount withInitialImageView:(UIImageView *)imgView andAnimType:(AnimationType)animType;
+
+/*
+ Close method
+ ********
+ (Can also be close via NSNotification "CLOSE_IMAGE_ZOOM_VIEWER")
+ ********
+ */
+- (void)closeZoomViewer;
 
 @end

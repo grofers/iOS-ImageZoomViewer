@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgview;
-@property (nonatomic)BOOL zoomed;
+@property (nonatomic) BOOL zoomed;
 
+- (void)updateCellWithViewRect:(CGRect)rect margins:(CGFloat)topBottomMargin;
 
 @end

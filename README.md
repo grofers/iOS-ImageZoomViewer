@@ -10,7 +10,7 @@ ImageZoomViewer is a simple to use Objective C framework that allows the capabil
 
 ## Screenshot
 
-![Example](https://media.giphy.com/media/7P7sSJa5AOz9S/giphy.gif)
+![Example](https://media.giphy.com/media/l4EoSdcwlQVuQF2uY/giphy.gif)
 
 ## Example
 
@@ -61,6 +61,11 @@ Your source view controllers need to implement this protocol to facilitate the t
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:animFrame];
     [imgView setImage:image];
     [imageZoomViewer showWithPageIndex:imageIndex andImagesCount:(int)[images count] withInitialImageView:imgView andAnimType:AnimationTypePop];
+    
+### Dismiss
+     [zoomImageView closeZoomViewer];
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_IMAGE_ZOOM_VIEWER" object:nil];
+
 
 ## Requirements
 
